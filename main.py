@@ -33,7 +33,7 @@ def random_number_selector():
 
 def compare(n, nr):
 
-    if not n.isnum():
+    if not n.isnumeric():
         return False, "Invalid input!"
 
     elif n > 100:
