@@ -32,11 +32,12 @@ def random_number_selector():
 
 
 def compare(n, nr):
-
     if not n.isnumeric():
-        return False, "Invalid input!"
+      return False, "Invalid Input!"
 
-    elif n > 100:
+    n = int(n)
+
+    if n > 100:
         return False, "Above range! (range = [1, 100].)"
     elif n < 1:
         return False, "Below range! (range = [1, 100].)"
@@ -59,7 +60,7 @@ def play_higher_lower():
     nr = random_number_selector()
 
     while (y > 0):
-        n = int(input("\nGuess a number: "))
+        n = input("\nGuess a number: ")
         is_over, result = compare(n, nr)
         print(result)
         y -= 1
