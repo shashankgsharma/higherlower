@@ -32,7 +32,11 @@ def random_number_selector():
 
 
 def compare(n, nr):
-    if n > 100:
+
+    if not n.isnum():
+        return False, "Invalid input!"
+
+    elif n > 100:
         return False, "Above range! (range = [1, 100].)"
     elif n < 1:
         return False, "Below range! (range = [1, 100].)"
@@ -53,7 +57,6 @@ def play_higher_lower():
     y = difficulty_level_selector()
     print(f"You've {y} number of attempts.")
     nr = random_number_selector()
-    print(f"Psst! The answer is: {nr}.")
 
     while (y > 0):
         n = int(input("\nGuess a number: "))
